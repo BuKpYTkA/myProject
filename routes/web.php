@@ -36,7 +36,7 @@ Route::prefix('user')->group(function () {
     Route::get('alias/{alias}', 'PostController@postsByUserAliasForm')->name('posts.postsByAlias');
     Route::get('id/{id}', 'PostController@postsByUserIdForm')->name('posts.postsById')->where('id', '[0-9]+');
     Route::post('search_result', 'UserController@searchUser')->name('userSearch');
-    Route::get('search_result', 'UserController@returnHome')->name('userSearchForm');
+    Route::get('search_result', 'HomeController@index')->name('userSearchForm');
 });
 
 Route::prefix('posts')->group(function () {

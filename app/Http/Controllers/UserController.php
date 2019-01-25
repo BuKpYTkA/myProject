@@ -4,11 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Repositories\PostRep;
 use App\Repositories\UserRep;
-use App\User;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Route;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
+
 
 /**
  * Class UserController
@@ -39,14 +36,6 @@ class UserController extends Controller
         return view('cabinet.mainCabinet', [
             'user' => auth()->user()
         ]);
-    }
-
-    /**
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
-     */
-    public function returnHome()
-    {
-        return redirect(route('posts.postsByAlias', auth()->user()->alias));
     }
 
     /**
